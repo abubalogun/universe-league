@@ -1,117 +1,71 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const contestants = [
-        { name: "Ayumu", nationality: "Japan", photo: "images/ayumu.jpg", team: "Rhythm" },
-        { name: "Cha Woongki", nationality: "South Korea", photo: "images/cha-woongki.jpg", team: "Rhythm" },
-        { name: "Daisuke", nationality: "Japan", photo: "images/daisuke.jpg", team: "Rhythm" },
-        { name: "Eito", nationality: "Japan", photo: "images/eito.jpg", team: "Rhythm" },
-        { name: "Jin Ziming", nationality: "China", photo: "images/jin-ziming.jpg", team: "Rhythm" },
-        { name: "JL", nationality: "South Korea", photo: "images/jl.jpg", team: "Rhythm" },
-        { name: "Xie Yuxin", nationality: "China", photo: "images/xie-yuxin.jpg", team: "Rhythm" },
-        { name: "Kwon Heejun", nationality: "South Korea", photo: "images/kwon-heejun.jpg", team: "Rhythm" },
-        { name: "Mac", nationality: "China", photo: "images/mac.jpg", team: "Rhythm" },
-        { name: "Park Juwon", nationality: "South Korea", photo: "images/park-juwon.jpg", team: "Rhythm" },
-        { name: "Royce", nationality: "South Korea", photo: "images/royce.jpg", team: "Rhythm" },
-        { name: "Sirin", nationality: "South Korea", photo: "images/sirin.jpg", team: "Rhythm" },
-        { name: "Steven", nationality: "South Korea", photo: "images/steven.jpg", team: "Rhythm" },
-        { name: "Zhang Shuaibo", nationality: "China", photo: "images/zhang-shuaibo.jpg", team: "Rhythm" },
+const contestants = [
+    { name: "Anyul", team: "Beat", photo: "Anyul.jpg", nationality: "South Korea" },
+    { name: "Ayumu", team: "Rhythm", photo: "Ayumu.jpg", nationality: "Japan" },
+    { name: "Bae Jaeho", team: "Groove", photo: "Bae-Jaeho.jpg", nationality: "South Korea" },
+    { name: "Cha Woongki", team: "Beat", photo: "Cha-Woongki.jpg", nationality: "South Korea" },
+    { name: "Chih En", team: "Beat", photo: "Chih-En.jpg", nationality: "Taiwan" },
+    { name: "Daisuke", team: "Rhythm", photo: "Daisuke.jpg", nationality: "Japan" },
+    { name: "Eito", team: "Rhythm", photo: "Eito.jpg", nationality: "Japan" },
+    { name: "Hiroto", team: "Groove", photo: "Hiroto.jpg", nationality: "Japan" },
+    { name: "James", team: "Groove", photo: "James.jpg", nationality: "Thailand" },
+    { name: "Jang Kyungho", team: "Groove", photo: "Jang-Kyungho.jpg", nationality: "South Korea" },
+    { name: "Jin Ziming", team: "Rhythm", photo: "Jin-Ziming.jpg", nationality: "China" },
+    { name: "Jiang Fan", team: "Beat", photo: "Jiang-Fan.jpg", nationality: "China" },
+    { name: "JL", team: "Rhythm", photo: "JL.jpg", nationality: "Philippines" },
+    { name: "Kenta", team: "Groove", photo: "Kenta.jpg", nationality: "Japan" },
+    { name: "Keum Jinho", team: "Groove", photo: "Keum-Jinho.jpg", nationality: "South Korea" },
+    { name: "Kim Daeyun", team: "Groove", photo: "Kim-Daeyun.jpg", nationality: "South Korea" },
+    { name: "Kim Dongyun", team: "Beat", photo: "Kim-Dongyun.jpg", nationality: "South Korea" },
+    { name: "Kim Gijoong", team: "Groove", photo: "Kim-Gijoong.jpg", nationality: "South Korea" },
+    { name: "Kim Hyotae", team: "Groove", photo: "Kim-Hyotae.jpg", nationality: "South Korea" },
+    { name: "Kim Joohyoung", team: "Groove", photo: "Kim-Joohyoung.jpg", nationality: "South Korea" },
+    { name: "Koo Hanseo", team: "Beat", photo: "Koo-Hanseo.jpg", nationality: "South Korea" },
+    { name: "Kwon Heejun", team: "Groove", photo: "Kwon-Heejun.jpg", nationality: "South Korea" },
+    { name: "Li Zhinuo", team: "Beat", photo: "Li-Zhinuo.jpg", nationality: "China" },
+    { name: "Li Zhiwei", team: "Groove", photo: "Li-Zhiwei.jpg", nationality: "China" },
+    { name: "Mac", team: "Rhythm", photo: "Mac.jpg", nationality: "Thailand" },
+    { name: "Nam Doyoon", team: "Beat", photo: "Nam-Doyoon.jpg", nationality: "South Korea" },
+    { name: "Park Jihun", team: "Beat", photo: "Park-Jihun.jpg", nationality: "South Korea" },
+    { name: "Park Juwon", team: "Rhythm", photo: "Park-Juwon.jpg", nationality: "South Korea" },
+    { name: "Park Yeonjun", team: "Beat", photo: "Park-Yeonjun.jpg", nationality: "South Korea" },
+    { name: "Park Han", team: "Rhythm", photo: "Park-Han.jpg", nationality: "South Korea" },
+    { name: "Royce", team: "Rhythm", photo: "Royce.jpg", nationality: "China" },
+    { name: "Seo Jeongwoo", team: "Groove", photo: "Seo-Jeongwoo.jpg", nationality: "South Korea" },
+    { name: "Sirin", team: "Rhythm", photo: "Sirin.jpg", nationality: "Thailand" },
+    { name: "Steven", team: "Rhythm", photo: "Steven.jpg", nationality: "Australia" },
+    { name: "Yeo Gangdong", team: "Groove", photo: "Yeo-Gangdong.jpg", nationality: "South Korea" },
+    { name: "Yuito", team: "Beat", photo: "Yuito.jpg", nationality: "Japan" },
+    { name: "Zhang Shuaibo", team: "Groove", photo: "Zhang-Shuaibo.jpg", nationality: "China" },
+    { name: "Zenzen", team: "Rhythm", photo: "Zenzen.jpg", nationality: "Thailand" }
+];
 
-        { name: "Bae Jaeho", nationality: "South Korea", photo: "images/bae-jaeho.jpg", team: "Groove" },
-        { name: "He Junjin", nationality: "South Korea", photo: "images/he-junjin.jpg", team: "Groove" },
-        { name: "Hiroto", nationality: "Japan", photo: "images/hiroto.jpg", team: "Groove" },
-        { name: "James", nationality: "South Korea", photo: "images/james.jpg", team: "Groove" },
-        { name: "Jang Kyungho", nationality: "South Korea", photo: "images/jang-kyungho.jpg", team: "Groove" },
-        { name: "Kenta", nationality: "Japan", photo: "images/kenta.jpg", team: "Groove" },
-        { name: "Kim Daeyun", nationality: "South Korea", photo: "images/kim-daeyun.jpg", team: "Groove" },
-        { name: "Kim Gijoong", nationality: "South Korea", photo: "images/kim-gijoong.jpg", team: "Groove" },
-        { name: "Kim Joohyoung", nationality: "South Korea", photo: "images/kim-joohyoung.jpg", team: "Groove" },
-        { name: "Li Zhiwei", nationality: "China", photo: "images/li-zhiwei.jpg", team: "Groove" },
-        { name: "Parkhan", nationality: "South Korea", photo: "images/parkhan.jpg", team: "Groove" },
-        { name: "Seo Jeongwoo", nationality: "South Korea", photo: "images/seo-jeongwoo.jpg", team: "Groove" },
-        { name: "Yeo Gangdong", nationality: "South Korea", photo: "images/yeo-gangdong.jpg", team: "Groove" },
-        { name: "Zenzen", nationality: "China", photo: "images/zenzen.jpg", team: "Groove" },
+// Function to render contestant cards on the page
+function renderContestants() {
+    const container = document.getElementById("contestant-container");
+    contestants.forEach(contestant => {
+        const card = document.createElement("div");
+        card.classList.add("contestant-card", contestant.team);
 
-        { name: "Anyul", nationality: "South Korea", photo: "images/anyul.jpg", team: "Beat" },
-        { name: "Cha Woongki", nationality: "South Korea", photo: "images/cha-woongki.jpg", team: "Beat" },
-        { name: "Chih En", nationality: "Taiwan", photo: "images/chih-en.jpg", team: "Beat" },
-        { name: "Jiang Fan", nationality: "China", photo: "images/jiang-fan.jpg", team: "Beat" },
-        { name: "Keum Jinho", nationality: "South Korea", photo: "images/keum-jinho.jpg", team: "Beat" },
-        { name: "Kim Dongyun", nationality: "South Korea", photo: "images/kim-dongyun.jpg", team: "Beat" },
-        { name: "Kim Hyotae", nationality: "South Korea", photo: "images/kim-hyotae.jpg", team: "Beat" },
-        { name: "Koo Hanseo", nationality: "South Korea", photo: "images/koo-hanseo.jpg", team: "Beat" },
-        { name: "Li Zhinuo", nationality: "China", photo: "images/li-zhinuo.jpg", team: "Beat" },
-        { name: "Nam Doyoon", nationality: "South Korea", photo: "images/nam-doyoon.jpg", team: "Beat" },
-        { name: "Park Jihun", nationality: "South Korea", photo: "images/park-jihun.jpg", team: "Beat" },
-        { name: "Park Yeonjun", nationality: "South Korea", photo: "images/park-yeonjun.jpg", team: "Beat" },
-        { name: "Kang Junhyuk", nationality: "South Korea", photo: "images/kang-junhyuk.jpg", team: "Beat" },
-        { name: "Yuito", nationality: "Japan", photo: "images/yuito.jpg", team: "Beat" }
-    ];
+        // Create the image for each contestant
+        const image = document.createElement("img");
+        image.src = `images/${contestant.photo}`;
+        image.alt = `${contestant.name}'s photo`;
 
-    const contestantList = document.getElementById("contestantList");
-    const rankingSpots = document.querySelectorAll(".ranking-spot");
+        // Create the name and nationality
+        const name = document.createElement("h3");
+        name.textContent = contestant.name;
+        const nationality = document.createElement("p");
+        nationality.textContent = `Nationality: ${contestant.nationality}`;
 
-    // Dynamically generate contestant profiles
-    contestants.forEach((contestant, index) => {
-        const contestantDiv = document.createElement("div");
-        contestantDiv.classList.add("contestant", contestant.team.toLowerCase());
-        contestantDiv.draggable = true;
-        contestantDiv.innerHTML = `
-            <img src="${contestant.photo}" alt="${contestant.name}">
-            <div>
-                <h4>${contestant.name}</h4>
-                <p>${contestant.nationality}</p>
-            </div>
-        `;
-        
-        contestantDiv.addEventListener("dragstart", (e) => {
-            e.dataTransfer.setData("text", index);
-        });
+        // Add the content to the card
+        card.appendChild(image);
+        card.appendChild(name);
+        card.appendChild(nationality);
 
-        contestantList.appendChild(contestantDiv);
+        // Append the card to the container
+        container.appendChild(card);
     });
+}
 
-    // Allow contestant to be dropped into ranking spots
-    rankingSpots.forEach(spot => {
-        spot.addEventListener("dragover", (e) => {
-            e.preventDefault();
-        });
-
-        spot.addEventListener("drop", (e) => {
-            e.preventDefault();
-            const contestantIndex = e.dataTransfer.getData("text");
-            const spotRank = spot.getAttribute("data-rank");
-
-            // Place the contestant in the correct spot
-            const contestant = contestants[contestantIndex];
-            spot.innerHTML = `
-                <img src="${contestant.photo}" alt="${contestant.name}">
-                <h4>${contestant.name}</h4>
-                <p>${contestant.nationality}</p>
-            `;
-
-            // Make sure the 1st pick spot is highlighted
-            if (spotRank == "1") {
-                spot.classList.add("top-spot");
-            }
-        });
-    });
-
-    // Save rankings to localStorage
-    document.getElementById("saveRanking").addEventListener("click", () => {
-        const rankings = Array.from(rankingSpots).map(spot => {
-            return spot.querySelector("h4") ? spot.querySelector("h4").textContent : null;
-        }).filter(name => name);
-
-        localStorage.setItem("ranking", JSON.stringify(rankings));
-        alert("Ranking saved!");
-    });
-
-    // Download ranking as an image (using html2canvas)
-    document.getElementById("downloadImage").addEventListener("click", () => {
-        html2canvas(document.body).then((canvas) => {
-            const link = document.createElement('a');
-            link.href = canvas.toDataURL();
-            link.download = 'ranking.png';
-            link.click();
-        });
-    });
-});
+// Call the function to render the contestants
+document.addEventListener("DOMContentLoaded", renderContestants);
