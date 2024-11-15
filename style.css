@@ -1,60 +1,78 @@
-/* General styles */
+/* General body and font settings */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-    text-align: center;
-}
-
-header {
-    background-color: #343a40;
-    color: white;
     padding: 20px;
 }
 
-.contestants-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Contestant card styles */
-.contestant-card {
-    width: 200px;
-    padding: 10px;
-    border-radius: 10px;
+/* Header styling */
+h1 {
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    cursor: grab;
+    color: #333;
 }
 
-.contestant-card:hover {
-    transform: scale(1.05);
-}
-
-.contestant-photo {
+/* Table styling */
+table {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Team-specific colors */
-.rhythm {
-    background-color: #FF4D4D; /* Red */
-    border: 2px solid #FF0000;
+/* Table header cell styling */
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    background-color: #fff;
 }
 
-.beat {
-    background-color: #4D94FF; /* Blue */
-    border: 2px solid #004CFF;
+/* Header row background */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
 }
 
-.groove {
-    background-color: #4DFF88; /* Green */
-    border: 2px solid #00FF4C;
+/* Table row styling for alternate rows */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
+/* Styling for contestant photos */
+.contestant-photo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Team color coding */
+.team-rhythm {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.team-beat {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+.team-groove {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+/* Styling for table cells in terms of spacing and text alignment */
+td {
+    vertical-align: middle;
+}
+
+/* Styling for the page's margin and overall layout */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
