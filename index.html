@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contestant Roster</title>
+    <title>Universe League Contestants</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,8 +22,27 @@
         <tbody></tbody>
     </table>
 
-    <script src="script.js"></script>
+    <script>
+        // Fetch contestant data from the Apps Script
+        async function loadContestants() {
+            const response = await fetch('YOUR_WEB_APP_URL'); // Replace with your Google Apps Script URL
+            const contestants = await response.json();
+            const tableBody = document.querySelector('#contestants-table tbody');
+            contestants.forEach(contestant => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${contestant.name}</td>
+                    <td>${contestant.age}</td>
+                    <td>${contestant.year}</td>
+                    <td>${contestant.nationality}</td>
+                    <td><img src="${contestant.photo}" alt="${contestant.name}" class="contestant-photo" /></td>
+                    <td>${contestant.team}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        loadContestants(); // Call the function to load data on page load
+    </script>
 </body>
 </html>
-
-
