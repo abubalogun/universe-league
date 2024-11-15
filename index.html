@@ -1,61 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universe League Contestants</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .contestant-photo {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-        .team-rhythm {
-            background-color: red;
-        }
-        .team-beat {
-            background-color: blue;
-        }
-        .team-groove {
-            background-color: green;
-        }
-    </style>
+    <title>Universe League Ranker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Contestant Roster</h1>
-    <table id="contestants-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Year</th>
-                <th>Nationality</th>
-                <th>Photo</th>
-                <th>Team</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Table rows will be populated by JavaScript -->
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>Universe League Ranker</h1>
+
+        <div class="ranker-container">
+            <!-- Contestant Sidebar -->
+            <div class="contestant-sidebar">
+                <h2>Contestants</h2>
+                <div id="contestantList">
+                    <!-- Contestants will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Ranking Section (Pyramid of spots) -->
+            <div class="ranking-section">
+                <h2>Rankings</h2>
+                <div class="ranking-pyramid">
+                    <div class="ranking-spot top-spot" id="rank-1" data-rank="1">
+                        <div class="spot-label">1st Pick</div>
+                    </div>
+                    <div class="ranking-spot" id="rank-2" data-rank="2"></div>
+                    <div class="ranking-spot" id="rank-3" data-rank="3"></div>
+                    <div class="ranking-spot" id="rank-4" data-rank="4"></div>
+                    <div class="ranking-spot" id="rank-5" data-rank="5"></div>
+                    <div class="ranking-spot" id="rank-6" data-rank="6"></div>
+                    <div class="ranking-spot" id="rank-7" data-rank="7"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="saveRanking">Save Ranking</button>
+        <button id="downloadImage">Download Ranking as Image</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
