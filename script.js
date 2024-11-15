@@ -3,7 +3,7 @@ function doGet() {
 }
 
 function getContestants() {
-  const sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getSheetByName("Sheet1");
+  const sheet = SpreadsheetApp.openById("1B4F3Jql3i670C1chOZ7XdwTKOPGDDTNCgZkf_5UufKA").getSheetByName("Sheet1");
   const data = sheet.getDataRange().getValues();
   const contestants = [];
   
