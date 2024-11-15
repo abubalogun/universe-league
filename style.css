@@ -1,110 +1,29 @@
-/* Reset some defaults */
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
+/* Contestant container */
+#contestant-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Contestant card style */
+.contestant-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-h1 {
-    margin-top: 20px;
-    font-size: 36px;
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 24px;
-    margin-top: 20px;
-}
-
-#container {
-    max-width: 1200px;
-    width: 90%;
-}
-
-.contestant-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.contestant {
-    margin: 10px;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.contestant img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.contestant:hover {
-    transform: scale(1.05);
-}
-
-.ranking-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
-    justify-items: center;
-    margin-top: 30px;
-    position: relative;
-}
-
-.ranking-spot {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 3px solid #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #fff;
-    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
     position: relative;
 }
 
-.ranking-spot.top-spot {
-    border-color: #FFD700;
-    background-color: #fff5e1;
-}
-
-.ranking-spot img {
-    width: 70%;
-    height: 70%;
+.contestant-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
     object-fit: cover;
-}
-
-button {
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
+    max-width: 120px;
+    max-height: 120px;
+    margin-bottom: 10
