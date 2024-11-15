@@ -1,4 +1,3 @@
-/* General body and font settings */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -6,73 +5,112 @@ body {
     padding: 20px;
 }
 
-/* Header styling */
 h1 {
     text-align: center;
     color: #333;
 }
 
-/* Table styling */
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Table header cell styling */
-th, td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-    background-color: #fff;
-}
-
-/* Header row background */
-th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-/* Table row styling for alternate rows */
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Styling for contestant photos */
-.contestant-photo {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-/* Team color coding */
-.team-rhythm {
-    background-color: red;
-    color: white;
-    font-weight: bold;
-}
-
-.team-beat {
-    background-color: blue;
-    color: white;
-    font-weight: bold;
-}
-
-.team-groove {
-    background-color: green;
-    color: white;
-    font-weight: bold;
-}
-
-/* Styling for table cells in terms of spacing and text alignment */
-td {
-    vertical-align: middle;
-}
-
-/* Styling for the page's margin and overall layout */
 .container {
     width: 80%;
     margin: 0 auto;
+    text-align: center;
+}
+
+.ranker-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contestant-sidebar {
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contestant-sidebar h2 {
+    text-align: center;
+}
+
+#contestantList {
+    margin-top: 20px;
+}
+
+.contestant {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contestant:hover {
+    background-color: #f9f9f9;
+}
+
+.contestant img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border: 3px solid transparent;
+}
+
+.contestant.rhythm img {
+    border-color: red;
+}
+
+.contestant.groove img {
+    border-color: green;
+}
+
+.contestant.beat img {
+    border-color: blue;
+}
+
+.ranking-section {
+    width: 60%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ranking-spot {
+    margin: 10px;
+    height: 80px;
+    border: 2px dashed #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 8px;
+}
+
+.ranking-spot.top-spot {
+    background-color: #ffeb3b;
+    border: 3px solid #fbc02d;
+}
+
+.ranking-spot .spot-label {
+    position: absolute;
+    top: -20px;
+    font-weight: bold;
+    color: #333;
+}
+
+#saveRanking, #downloadImage {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
