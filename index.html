@@ -4,35 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universe League Ranker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Universe League Ranker</h1>
+    <div id="container">
+        <h1>Universe League Contestant Roster</h1>
+        <div id="contestantList" class="contestant-list">
+            <!-- Contestant profiles will be dynamically added here -->
+        </div>
 
-        <div class="ranker-container">
-            <!-- Contestant Sidebar -->
-            <div class="contestant-sidebar">
-                <h2>Contestants</h2>
-                <div id="contestantList">
-                    <!-- Contestants will be dynamically added here -->
-                </div>
-            </div>
-
-            <!-- Ranking Section (Pyramid of spots) -->
-            <div class="ranking-section">
-                <h2>Rankings</h2>
-                <div class="ranking-pyramid">
-                    <div class="ranking-spot top-spot" id="rank-1" data-rank="1">
-                        <div class="spot-label">1st Pick</div>
-                    </div>
-                    <div class="ranking-spot" id="rank-2" data-rank="2"></div>
-                    <div class="ranking-spot" id="rank-3" data-rank="3"></div>
-                    <div class="ranking-spot" id="rank-4" data-rank="4"></div>
-                    <div class="ranking-spot" id="rank-5" data-rank="5"></div>
-                    <div class="ranking-spot" id="rank-6" data-rank="6"></div>
-                    <div class="ranking-spot" id="rank-7" data-rank="7"></div>
-                </div>
+        <div id="ranking">
+            <h2>Rankings</h2>
+            <div class="ranking-container">
+                <div class="ranking-spot" data-rank="1">1st</div>
+                <div class="ranking-spot" data-rank="2">2nd</div>
+                <div class="ranking-spot" data-rank="3">3rd</div>
+                <div class="ranking-spot" data-rank="4">4th</div>
+                <div class="ranking-spot" data-rank="5">5th</div>
+                <div class="ranking-spot" data-rank="6">6th</div>
+                <div class="ranking-spot" data-rank="7">7th</div>
+                <div class="ranking-spot" data-rank="8">8th</div>
+                <div class="ranking-spot" data-rank="9">9th</div>
+                <div class="ranking-spot" data-rank="10">10th</div>
             </div>
         </div>
 
@@ -40,6 +33,7 @@
         <button id="downloadImage">Download Ranking as Image</button>
     </div>
 
+    <script src="html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
