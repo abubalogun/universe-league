@@ -38,6 +38,8 @@ function loadContestants() {
         `;
         tableBody.appendChild(row);
     });
+    console.log('Loading contestants...');
+
 }
 
 // Load contestants when the page is ready
