@@ -1,41 +1,60 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
     text-align: center;
 }
 
-h1 {
-    color: #1e90ff;
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
 }
 
-#contestants {
+.contestants-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
     justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
+/* Contestant card styles */
 .contestant-card {
-    width: 150px;
-    padding: 1em;
-    background-color: #fff;
+    width: 200px;
+    padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: grab;
+}
+
+.contestant-card:hover {
+    transform: scale(1.05);
 }
 
 .contestant-photo {
     width: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #1e90ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Team-specific colors */
+.rhythm {
+    background-color: #FF4D4D; /* Red */
+    border: 2px solid #FF0000;
+}
+
+.beat {
+    background-color: #4D94FF; /* Blue */
+    border: 2px solid #004CFF;
+}
+
+.groove {
+    background-color: #4DFF88; /* Green */
+    border: 2px solid #00FF4C;
 }
 
