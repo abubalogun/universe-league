@@ -12,6 +12,7 @@ const contestants = [
 
 // Function to dynamically populate the table with contestant data
 function loadContestants() {
+    console.log('Loading contestants...'); // Debugging line
     const tableBody = document.querySelector('#contestants-table tbody');
     tableBody.innerHTML = ''; // Clear any existing data
 
@@ -38,9 +39,10 @@ function loadContestants() {
         `;
         tableBody.appendChild(row);
     });
-    console.log('Loading contestants...');
-
 }
+
+// Log contestant data to check
+console.log(contestants);
 
 // Load contestants when the page is ready
 document.addEventListener('DOMContentLoaded', loadContestants);
